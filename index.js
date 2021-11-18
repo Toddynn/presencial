@@ -1,7 +1,7 @@
 alert("Toddys é lindo");
-var a = 10;
-console.log("Hello, World!" + a);
-console.log("valor de a é: " + a);
+var b = 10;
+console.log("Hello, World!" + b);
+console.log("valor de b é: " + b);
 
 //exercicio 1
 for(var i=150;i<=300;i++){
@@ -38,3 +38,14 @@ while(fib0 < 1000){
     fib0 = fib1;
     fib1 += aux;
 }
+
+document.querySelector("#editar").addEventListener("click", editar);
+
+function editar(){
+    let texto = document.querySelector("#texto").value;
+    let paragrafo = document.querySelector("#paragrafo");
+    paragrafo.innerHTML = texto;
+}
+
+
+
