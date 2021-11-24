@@ -1,9 +1,9 @@
-document.querySelector("#editar").addEventListener("click", editar);
+document.getElementById("novo").addEventListener("click", novo);
 
-function editar(){
-    let texto = document.querySelector("#texto").value;
-    let paragrafo = document.querySelector("#paragrafo");
-    paragrafo.innerHTML = texto;
+function novo(){
+    let paragrafos = document.querySelectorAll('p');
+
+    for(let i = 0; i <= 5; i++){
+        paragrafos[i].innerHTML = i+1;
+    }
 }
-
-document.querySelector("")
