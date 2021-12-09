@@ -1,9 +1,16 @@
 document.querySelector("#adicionar").addEventListener("click", adicionar);
+document.querySelector("tbody").addEventListener("mouseover", mudarCor);
 
+function mudarCor(event){
+    var evento = event.target.parentNode;
+    console.log(evento);
+
+    evento.classList.toggle("cor");
+}
 function adicionar(event){
-    event.prevenDefault();
+    event.preventDefault();
 
-    let form = document.querySelector("#form-adiciona");
+    let form = document.querySelector("#form-adicionar");
     let nome = form.nome.value;
     let idade = form.idade.value;
 

@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>exercicio4</title>
+    
+    <script src="exercicio4.js" defer></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <h1>Conteúdo da tabela</h1>
     <table>
         <thead>
-            <th>nome</th>
-            <th>idade</th>
+            <tr>
+                <td>Nome</td>
+                <td>Idade</td>
+            </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>Vinicius</td>
+                <td>17</td>
+            </tr>
+        </tbody>
     </table>
-    <form action="">
+    <form id="form-adicionar">
         <input type="text" name="nome" id="nome">
         <input type="number" name="idade" id="idade">
         <button type="submit" id="adicionar">Adicionar</button>
