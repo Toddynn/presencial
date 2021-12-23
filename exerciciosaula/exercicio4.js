@@ -35,8 +35,8 @@ function adicionar(event){
     let nomes = JSON.parse(localStorage.getItem('nome'));
     let idades = JSON.parse(localStorage.getItem('idade'));
 
-    nomes.push(nomes);
-    idades.push(idades);
+    nomes.push(nome);
+    idades.push(idade);
 
     localStorage.setItem('nome', JSON.stringify(nomes));
     localStorage.setItem('idade', JSON.stringify(idades));
