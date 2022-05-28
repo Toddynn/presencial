@@ -1,6 +1,6 @@
-document.querySelector("#adicionar").addEventListener("click", adicionar)
-document.querySelector("#somar").addEventListener("click", somar)
-document.querySelector("#filtrar").addEventListener("click", filtrar)
+document.querySelector("#adicionar").addEventListener("click", adicionar);
+document.querySelector("#somar").addEventListener("click", somar);
+document.querySelector("#filtrar").addEventListener("click", filtrar);
 
 var registros = [];
 var registrosTemporarios = [];

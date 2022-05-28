@@ -1,0 +1,43 @@
+body{
+    background-color: mediumslateblue;
+}
+table{
+    border-collapse: collapse; 
+}
+thead{
+    background-color: springgreen;
+}
+tbody tr{
+    background-color: rgb(250, 250, 152);
+}
+table td, th{
+    padding: 5px;
+}
+form{
+    padding-top: 5px;
+    padding-block-end: 5px;
+}
+button{
+    padding: 2px;
+    font-size: 15px;
+    background-color: white;
+    width: 30;
+    margin: 2px; 
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: blueviolet;
+}
+h1{
+    font-size: 72px;
+    background: -webkit-linear-gradient(black, mediumslateblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cor{
+    background-color: springgreen;
+}
+.btn{
+    background-color: crimson;
+}
