@@ -1,6 +1,5 @@
 document.querySelector("#adicionar").addEventListener("click", adicionar);
 document.querySelector("tbody").addEventListener("mouseover", mudarCor);
-//document.querySelector("btn").addEventListener("click", remover);
 
 var cont = 0;
 
@@ -14,15 +13,13 @@ if(localStorage.length > 0){
     let nomes = ['vinicius', 'plinio'];
     let idades = ['17', '20'];
 
-
     localStorage.setItem('nome', JSON.stringify(nomes));
     localStorage.setItem('idade', JSON.stringify(idades));
 }
-function mudarCor(event){
-    var evento = event.target.parentNode;
-    console.log(evento);
 
-    evento.classList.toggle("cor");
+function mudarCor(event){
+    var evento = event.target.parentNode.classList;
+    evento.toggle("cor");
 }
 
 function adicionar(event){
@@ -32,27 +29,28 @@ function adicionar(event){
     let nome = form.nome.value;
     let idade = form.idade.value;
 
-    let nomes = JSON.parse(localStorage.getItem('nome'));
-    let idades = JSON.parse(localStorage.getItem('idade'));
+    let nomes = JSON.parse(localStorage.getItem("nomes"));
+    let idades = JSON.parse(localStorage.getItem("idades"));
 
     nomes.push(nome);
     idades.push(idade);
 
-    localStorage.setItem('nome', JSON.stringify(nomes));
-    localStorage.setItem('idade', JSON.stringify(idades));
+    localStorage.setItem("nome", JSON.stringify(nomes));
+    localStorage.setItem("idade", JSON.stringify(idades));
     
     criarLinha(nome, idade);
 }
 function remover(event){
+    console.log(event);
     event.target.parentNode.remove();
 }
-function criarLinha(nome, idade){
-    let linha = document.createElement("tr");
-    let celulaNome = document.createElement("td");
-    let celulaIdade = document.createElement("td");
+function criarLinha(formNome, formIdade){
+    var linha = document.createElement("tr");
+    var celulaNome = document.createElement("td");
+    var celulaIdade = document.createElement("td");
 
-    celulaNome.textContent = nome;
-    celulaIdade.textContent = idade;
+    celulaNome.textContent = formNome;
+    celulaIdade.textContent = formIdade;
     
     var botao = document.createElement("button");
     botao.addEventListener("click", remover);
@@ -60,8 +58,8 @@ function criarLinha(nome, idade){
     botao.id = "btn" + cont;
     cont++;
 
-    linha.appendChild(celulaNome);
-    linha.appendChild(celulaIdade);
+    linha.appendChild(nome);
+    linha.appendChild(idade);
     linha.appendChild(botao);
     document.querySelector("tbody").appendChild(linha);
 }    

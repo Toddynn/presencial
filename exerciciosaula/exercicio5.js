@@ -21,3 +21,5 @@ function armazenar(event){
 
     localStorage.setItem(chave, texto);
 }
+
+console.log(event);
