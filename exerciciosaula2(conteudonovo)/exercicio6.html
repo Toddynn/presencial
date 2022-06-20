@@ -14,7 +14,24 @@
 <body>
     <p>exercicio6</p>
 
-    <form id="formulario "class="row g-3">
+    <div class="container-lg w-75">
+        <h1 class="mt-5">Registros de pessoas</h1>
+        <table class="table table-hover table-success table-stripped" id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Patrimônio</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+<hr>
+
+    <form id="form-adiciona"class="row g-3">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nome</label>
             <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome">
@@ -31,7 +48,10 @@
         <button type="submit" class="form-control"id="adicionar">Adicionar</button>
     </form>
 
-    <div class="col-md-6">
+</body>
+</html>
+
+<!--<div class="col-md-6">
         <div class="input-group">
             <button class="btn btn-secondary" id="somar">Somar patrimonio</button>
             <span class="inut-group-text">Somatoria</span>
@@ -43,25 +63,7 @@
     <form id="formulario-filtrar"class="row g-3">
         <div class="col-md-6">
             <div class="input-group">
-               <input type="text" id="filtro" class="form-control">
-               <button class="btn btn-secondary" id="filtrar">Filtrar com base na idade</button>
+            <input type="text" id="filtro" class="form-control">
+                <button class="btn btn-secondary" id="filtrar">Filtrar com base na idade</button>
         </div>
-    </form>
-
-    <div class="container-lg w-75">
-        <h1 class="mt-5">Registros de pessoas</h1>
-        <table class="table table-hover table-success table-stripped" id="tabela">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Patrimônio</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+    </form>-->

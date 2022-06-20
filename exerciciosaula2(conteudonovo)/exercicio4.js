@@ -4,6 +4,6 @@ function impar(numero){
     return(numero % 2 == 1);
 }
 
-let numerosImpar = numero.filter(impar);
+let numerosImpar = numeros.filter(impar);
 
-console.log(numerosImpar);
+console.log("esses são impar: " + numerosImpar);

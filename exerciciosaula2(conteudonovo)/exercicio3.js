@@ -4,5 +4,5 @@ function converterNumParaString(numero) {
     return numero.toString();
 }
 
-let vetor = numero.map(converterNumParaString);
+let vetor = numeros.map(converterNumParaString);
 console.log(vetor);

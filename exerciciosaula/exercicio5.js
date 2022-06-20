@@ -1,7 +1,7 @@
 document.querySelector("#adicionar").addEventListener("click", armazenar);
 document.querySelector("#remover").addEventListener("click", remover);
 
-function armazenar(event){
+function remover(event){
     event.preventDefault();
 
     let form = document.querySelector("#formulario");
