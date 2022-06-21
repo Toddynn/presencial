@@ -4,9 +4,9 @@ document.querySelector("button").addEventListener("click", remover);
 var cont = 0;
 
 if(!localStorage.getItem("nomes")){
-    nomes = ["Maria", "Leonardo"];
-    idades = ["35", "20"];
-    cpfs = ["00000000000", "11111111111"];
+    nomes = [""];
+    idades = [""];
+    cpfs = [""];
 
     localStorage.setItem("nomes", JSON.stringify(nomes));
     localStorage.setItem("idades", JSON.stringify(idades));
@@ -44,12 +44,12 @@ function adicionar(event){
     form.reset();
 }
 
-/*document.querySelector("tbody").addEventListener("mouseover",mudarCor);
+document.querySelector("tbody").addEventListener("mouseover",mudarCor);
 
 function mudarCor(event){
     var evento = event.target.parentNode.classList;
     evento.toggle("cor");
-}*/
+}
 
 function iniciarTabela(nomes, idades, cpfs){
     for(i = 0; i < nomes.length; i++){
