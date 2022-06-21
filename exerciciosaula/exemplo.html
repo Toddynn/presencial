@@ -23,7 +23,7 @@
     </table>
 
     <hr>
-    <h2>Adicionar pessoa</h2>
+    <h2>Adicionar pessoa</h2><span><button onclick="window.localStorage.clear(); window.location.reload();">Limpar Registros</button></span>
     <form id="form-adiciona">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">
@@ -34,7 +34,7 @@
         <label for="patrimonio">Patrimonio $</label>
         <input type="number" name="patrimonio" id="patrimonio">
         
-        <button type="submit" id="adicionar">adicionar</button>
+        <button type="submit" id="adicionar" onclick="window.location.reload();">adicionar</button>
     </form>
 </body>
 </html>
