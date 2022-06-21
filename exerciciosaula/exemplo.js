@@ -6,19 +6,19 @@ var cont = 0;
 if(!localStorage.getItem("nomes")){
     nomes = ["Maria", "Leonardo"];
     idades = ["35", "20"];
-    patrimonios = ["2.500", "1.000"];
+    cpfs = ["00000000000", "11111111111"];
 
     localStorage.setItem("nomes", JSON.stringify(nomes));
     localStorage.setItem("idades", JSON.stringify(idades));
-    localStorage.setItem("patrimonios", JSON.stringify(patrimonios));
+    localStorage.setItem("cpfs", JSON.stringify(cpfs));
 
 }else{
     nomes = JSON.parse(localStorage.getItem("nomes"));
     idades = JSON.parse(localStorage.getItem("idades"));
-    patrimonios = JSON.parse(localStorage.getItem("patrimonios"));
+    cpfs = JSON.parse(localStorage.getItem("cpfs"));
 }
 
-iniciarTabela(nomes, idades, patrimonios);
+iniciarTabela(nomes, idades, cpfs);
 
 function adicionar(event){
     event.preventDefault();
@@ -26,47 +26,46 @@ function adicionar(event){
     var form = document.querySelector("#form-adiciona");
     nome = form.nome.value;
     idade = form.idade.value;
-    patrimonio = form.patrimonio.value;
+    cpf = form.cpf.value;
 
     nomes = JSON.parse(localStorage.getItem("nomes"));
     idades = JSON.parse(localStorage.getItem("idades"));
-    patrimonios = JSON.parse(localStorage.getItem("patrimonios"));
+    cpfs = JSON.parse(localStorage.getItem("cpfs"));
 
     nomes.push(nome);
     idades.push(idade);
-    patrimonios.push(patrimonio);
+    cpfs.push(cpf);
 
     localStorage.setItem("nomes", JSON.stringify(nomes));
     localStorage.setItem("idades", JSON.stringify(idades));
-    localStorage.setItem("patrimonios", JSON.stringify(patrimonios));
+    localStorage.setItem("cpfs", JSON.stringify(cpfs));
 
-    criarLinha(nome, idade, patrimonio);
+    criarLinha(nome, idade, cpf);
     form.reset();
 }
 
-document.querySelector("tbody").addEventListener("mouseover",mudarCor);
+/*document.querySelector("tbody").addEventListener("mouseover",mudarCor);
 
 function mudarCor(event){
     var evento = event.target.parentNode.classList;
     evento.toggle("cor");
-}
+}*/
 
-function iniciarTabela(nomes, idades, patrimonios){
+function iniciarTabela(nomes, idades, cpfs){
     for(i = 0; i < nomes.length; i++){
-        criarLinha(nomes[i], idades[i], patrimonios[i]);
+        criarLinha(nomes[i], idades[i], cpfs[i]);
     }
-
 }
 
-function criarLinha(formNome, formIdade, formPatrimonio){
+function criarLinha(formNome, formIdade, formCpf){
     var linha = document.createElement("tr");
     var nome = document.createElement("td");
     var idade = document.createElement("td");
-    var patrimonio = document.createElement("td");
+    var cpf = document.createElement("td");
 
     nome.textContent = formNome;
     idade.textContent = formIdade;
-    patrimonio.textContent = formPatrimonio;
+    cpf.textContent = formCpf;
 
     var botao = document.createElement("button");
     botao.addEventListener("click", remover);
@@ -76,7 +75,7 @@ function criarLinha(formNome, formIdade, formPatrimonio){
 
     linha.appendChild(nome);
     linha.appendChild(idade);
-    linha.appendChild(patrimonio);
+    linha.appendChild(cpf);
     linha.appendChild(botao);
 
     document.querySelector("tbody").appendChild(linha);
@@ -85,4 +84,15 @@ function criarLinha(formNome, formIdade, formPatrimonio){
 function remover(event){
     console.log(event);
     event.target.parentNode.remove();
+}
+
+function limite_textarea(valor) {
+    quant = 11;
+    total = valor.length;
+    if(total <= quant) {
+        resto = quant - total;
+        document.getElementById('cont').innerHTML = resto + " restantes";
+    } else {
+        document.getElementById('cpf').value = valor.substr(0,quant);
+    }
 }
