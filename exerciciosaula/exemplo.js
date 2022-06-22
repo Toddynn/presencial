@@ -3,6 +3,10 @@ document.querySelector("button").addEventListener("click", remover);
 
 var cont = 0;
 
+function replaceCPF(cpf){
+    return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+}
+
 if(!localStorage.getItem("nomes")){
     nomes = [""];
     idades = [""];
