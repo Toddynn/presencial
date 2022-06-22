@@ -35,15 +35,15 @@
             <form id="form-adiciona">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
-                    <input class="form-control me-auto" type="text" name="nome" id="nome" placeholder="Informe seu nome">
+                    <input class="form-control me-auto" type="text" name="nome" id="nome" required placeholder="Informe seu nome">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Idade</span>
-                    <input class="form-control me-auto" type="number" name="idade" id="idade" placeholder="Informe sua idade">
+                    <input class="form-control me-auto" type="number" name="idade" id="idade" required placeholder="Informe sua idade">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">CPF</span>
-                    <input class="form-control me-auto" onkeyup="limite_textarea(this.value);" type="text" data-ls-module="charCounter" maxlength="11" name="cpf" id="cpf" placeholder="Apenas números" aria-describedby="sub">
+                    <input class="form-control me-auto" onkeyup="limite_textarea(this.value);" type="text" data-ls-module="charCounter" maxlength="11" name="cpf" id="cpf" required placeholder="Apenas números" aria-describedby="sub">
                     <div class="input-group">
                         <div id="sub" class="form-text">
                             <span id="cont">11 restantes</span>

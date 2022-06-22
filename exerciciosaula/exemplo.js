@@ -1,6 +1,11 @@
 document.querySelector("#adicionar").addEventListener("click",adicionar);
 document.querySelector("button").addEventListener("click", remover);
 
+var cpf = document.querySelector("#cpf");
+cpf.addEventListener("blur", function(){
+    if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+});
+
 var cont = 0;
 
 function replaceCPF(cpf){
